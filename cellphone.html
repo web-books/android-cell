@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HTML</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+<style>
+	root {
+		/* windows 11 */
+		--sdbar: #1c2127;
+		--sidebarCard: #454545;
+		--appbar: #1a2127;
+		--appbarCard: #272e34;
+		--drawer: #252c32;
+		--drawerHead: #2f363d;
+		--drawerCard: #353c44;
+		--body: #262d35;
+		--bodyCard: #373c44;
+		/* steam */
+		--bar: #101217;
+		--bod: #17191D;
+		--txt: #85878f;
+		--title: #b2b2b2;
+		--burgerTop: #aaabae;
+		--burgerMeat: #939393;
+		--burgerBottom: #7f8080;
+	}
+	* { box-sizing: border-box; }
+	body {
+		margin: 0;
+		padding: 0;
+		background: #17191d;
+		color: #85878f;
+	}
+	appbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: fixed;
+        top: 0; left: 0;
+		width: 100%;
+		height: 68px;
+		background: #101217;
+		color: #b2b2b2;
+		box-shadow: #0005 0 0 10px;
+		z-index: 9;
+	}
+	
+	home {
+		display: flex;
+        align-items: center; justify-content: center;
+		width: 100%;
+		height: calc( 100vh - 68px );
+        margin: 68px 0 0 0;
+		padding: 16px;
+	}
+</style>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Dancing+Script&family=Dosis:wght@400;600&family=Righteous&family=Updock&display=swap');
+    cel {
+    	position: relative;
+    	display: block;
+    	width: 250px;
+    	height: 550px;
+    	background: linear-gradient(
+    	    to bottom,
+    	    #205 0 1%,
+    	    rgb( 50 0 174 ) 10% 30%,
+    	    #90f 70% 100%
+    	);
+        background-image: url(cyanogenmod\ wallpapers.jpeg);
+        background-position: center;
+        background-size: cover;
+    	border-radius: 28px;
+    	box-shadow: #000000 0 0 0 12px;
+    	overflow: hidden;
+    }
+    
+    notch {
+    	display: flex;
+        align-items: center;
+        justify-content: space-between;
+    	width: 50%;
+    	height: 30px;
+        margin: 0;
+        padding: 12px 8px 3px 8px;
+    	background: #000;
+    	border-radius: 2rem;
+    	position: absolute;
+    	top: -14px;
+    	left: 50%;
+    	transform: translate( -50% );
+        z-index: 15;
+    }
+    cel-notch-camera {
+        display: block;
+        width: 15px;
+        height: 15px;
+        border-radius: 2rem;
+        border: 2px #000 solid;
+        background: #fff1;
+        overflow: hidden;
+    }
+    cel-notch-speaker {
+        display: block;
+        width: 70%;
+        height: 8px;
+        border-radius: 2rem;
+        border: 2px #000 solid;
+        background: #fff1;
+        overflow: hidden;
+    }
+    cel-notch-flash {
+        display: block;
+        width: 15px;
+        height: 15px;
+        border-radius: 2rem;
+        border: 2px #000 solid;
+        background: #fff1;
+        overflow: hidden;
+    }
+    
+    cel-statusbar {
+    	display: block;
+    	width: 100%;
+    	height: 2.5%;
+    	background: #17191D00;
+    	transition: .6s;
+    	position: absolute;
+    	top: 0; left: 0;
+        z-index: 12;
+    }.sb-open { height: 100%; background: #17191D99; }
+
+    cel-navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 100%;
+        height: 24px;
+        background: #0000;
+        z-index: 9;
+    } pill {
+        display: block;
+        width: 35%;
+        height: 3px;
+        border-radius: 2rem;
+        background: #fff8;
+    }
+    
+    cel-home {
+    	display: flex;
+    	align-items: center;
+    	justify-content: center;
+    } cel-home h1 { font-family: 'Dancing Script', cursive; font-size: 2rem; margin: 48px 0 0 0; }
+</style>
+</head>
+
+<body>
+	<appbar>
+		<h2 id="drawer-toggle">#</h2>
+		<h1>CEO</h1>
+		<h2 id="drawer-switch">@</h2>
+	</appbar>
+	
+	<drawer>
+	</drawer>
+	
+	<home>
+	<!-- <l href="https://github.com/ceo-sammarco">Github</l>
+	<p><a href="https://github.com/ceo-sammarco">https://github.com/ceo-sammarco</a></p> -->
+  
+  
+    <cel>
+        <cel-statusbar>
+        </cel-statusbar>
+        <notch>
+            <cel-notch-camera></cel-notch-camera>
+            <cel-notch-speaker></cel-notch-speaker>
+            <cel-notch-flash></cel-notch-flash>
+        </notch>
+        <cel-home>
+            <h1>12:30</h1>
+        </cel-home>
+        <cel-navbar>
+            <pill></pill>
+        </cel-navbar>
+    </cel>
+  
+  
+  	</home>
+  <!-- Project -->
+    <script>
+        window.addEventListener( "load", event => {
+            let body   = document.querySelector( "body" ),
+            	card   = document.querySelector( "card" ),
+            	appbar = document.querySelector( "appbar" ),
+            	drawer = document.querySelector( "drawer" ),
+            	drawerToggle = document.querySelector( "#drawer-toggle" ),
+            	drawerSwitch = document.querySelector( "#drawer-switch" ),
+            	ls     = document.querySelectorAll( "l" ),
+            	footer = document.querySelector( "footer" ),
+                pp     = document.querySelectorAll( "p" );
+              
+            function toggleBlock( v ) { 
+            	if( v.style.display == "block" ) {
+            		v.style.display = "none";
+            	} else { v.style.display = "block"; }
+            }
+            
+            // body.style.backgroundColor = "#212329";
+            
+            drawerToggle.addEventListener( "click", event => {
+            	drawer.classList.toggle( "drawer-toggle" );
+            	
+            } );
+            drawerSwitch.addEventListener( "click", event => {
+            	// toggleBlock( drawer );
+            	// if( drawer.style.display == "block" ) {
+            	// 	body.style.marginLeft = "76px";
+            	// } else {
+            	// 	body.style.marginLeft = "16px";
+            	// }
+            } );
+            pp.forEach( p => {
+                p.addEventListener( "click", event => {
+                    body.style.backgroundColor = "#ff9e00";
+                } );
+            } );
+            
+            ls.forEach( l => {
+            	l.addEventListener( "click", event => {
+            		window.open( l.getAttribute( "href" ), "_blank" );
+            	} );
+            } );
+            
+            
+            
+            
+
+           
+          
+        } );
+    </script>
+    <script>
+        window.addEventListener( "load", event => {
+            var nBar = document.querySelector( "cel-statusbar" );
+        	nBar.addEventListener( "click", event => {
+                nBar.classList.toggle( "sb-open" );
+        		// if( nBar.style.height == "99%" ) {
+        			// nBar.style.height = "2.5%";
+        		// } else { 
+        			// nBar.style.height = "99%";
+        		// }
+        	});
+        });
+    </script>
+</body>
+</html>
